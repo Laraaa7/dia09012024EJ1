@@ -38,10 +38,7 @@ public class Ej1AsientosCine {
 	        }
 	        System.out.println();
 
-		
 		 while (true) {
-	 
-
 	            System.out.print("Introduce el número de fila: ");
 	            int fila = scanner.nextInt();
 	            
@@ -51,11 +48,10 @@ public class Ej1AsientosCine {
 	            if (fila >= 1 && fila <= asientos.length && columna >= 1 && columna <= asientos[0].length
 	                    && asientos[fila - 1][columna - 1] == 'L') {
 	                asientos[fila - 1][columna - 1] = 'O';
-	                System.out.println("Acaba de ocupar este asiento");
+	                System.out.println("Acabas de reservar este asiento");
 	            } else {
-	                System.out.println("Error");
+	                System.out.println("Error, asiento ya ocupado");
 	            }
-
 	     
 	            System.out.println("Estado actual de los asientos:"); //Muestra los asientos actualizados ocupados
 	            for (int i = 0; i < asientos.length; i++) {
@@ -64,9 +60,8 @@ public class Ej1AsientosCine {
 	                }
 	                System.out.println();
 	            }
-	            System.out.println();
 	            
-	            System.out.print("¿Quiere salir? (Si/No): ");
+	            System.out.print("Quieres salir? (Si/No): ");
 	            String respuesta = scanner.next();
 	            if (respuesta.length() > 0 && respuesta.charAt(0) == 'S' || respuesta.charAt(0) == 's') { //Si la respuesta empieza por S o s termina de preguntar
 	                break;
