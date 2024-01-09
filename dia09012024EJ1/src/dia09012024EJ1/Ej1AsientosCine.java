@@ -21,16 +21,26 @@ public class Ej1AsientosCine {
 		
 		Scanner scanner = new Scanner (System.in);
 		
-		char[][] asientos = new char [30][30];
+		char[][] asientos = new char [10][10];  //Matriz de 10 x 10 asientos
 		
 		for (int i = 0; i < asientos.length; i++) {
             for (int j = 0; j < asientos[i].length; j++) {
                 asientos[i][j] = 'L';
             }
-        }
+        } 
+		
+		 System.out.println("Estado actual de los asientos:"); //Muestra los asientos iniciales
+	        for (int i = 0; i < asientos.length; i++) {
+	            for (int j = 0; j < asientos[i].length; j++) {
+	                System.out.print(asientos[i][j] + " ");
+	            }
+	            System.out.println();
+	        }
+	        System.out.println();
 
+		
 		 while (true) {
-	            mostrarAsientos(asientos);
+	 
 
 	            System.out.print("Introduce el número de fila: ");
 	            int fila = scanner.nextInt();
@@ -38,18 +48,31 @@ public class Ej1AsientosCine {
 	            System.out.print("Introduce el número de columna: ");
 	            int columna = scanner.nextInt();
 	            
-	            	 if (verificarAsiento(asientos, fila, columna)) {
-	                     asientos[fila - 1][columna - 1] = 'O';
-	                     System.out.println("Asiento ocupado");
-	                 } else {
-	                     System.out.println("Error");
-	                 }
+	            if (fila >= 1 && fila <= asientos.length && columna >= 1 && columna <= asientos[0].length
+	                    && asientos[fila - 1][columna - 1] == 'L') {
+	                asientos[fila - 1][columna - 1] = 'O';
+	                System.out.println("Acaba de ocupar este asiento");
+	            } else {
+	                System.out.println("Error");
+	            }
 
 	     
+	            System.out.println("Estado actual de los asientos:"); //Muestra los asientos actualizados ocupados
+	            for (int i = 0; i < asientos.length; i++) {
+	                for (int j = 0; j < asientos[i].length; j++) {
+	                    System.out.print(asientos[i][j] + " ");
+	                }
+	                System.out.println();
+	            }
+	            System.out.println();
 	            
-	            
-	            
-	}
+	            System.out.print("¿Quiere salir? (Si/No): ");
+	            String respuesta = scanner.next();
+	            if (respuesta.length() > 0 && respuesta.charAt(0) == 'S' || respuesta.charAt(0) == 's') { //Si la respuesta empieza por S o s termina de preguntar
+	                break;
+	            }
+	        }
 
 }
+
 }
