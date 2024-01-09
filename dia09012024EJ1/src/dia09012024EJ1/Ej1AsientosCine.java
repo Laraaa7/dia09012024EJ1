@@ -45,8 +45,7 @@ public class Ej1AsientosCine {
 	            System.out.print("Introduce el número de columna: ");
 	            int columna = scanner.nextInt();
 	            
-	            if (fila >= 1 && fila <= asientos.length && columna >= 1 && columna <= asientos[0].length
-	                    && asientos[fila - 1][columna - 1] == 'L') {
+	            if (asientos[fila - 1][columna - 1] == 'L') {
 	                asientos[fila - 1][columna - 1] = 'O';
 	                System.out.println("Acabas de reservar este asiento");
 	            } else {
