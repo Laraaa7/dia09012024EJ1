@@ -29,7 +29,8 @@ public class Ej1AsientosCine {
             }
         } 
 		
-		 System.out.println("Estado actual de los asientos:"); //Muestra los asientos iniciales
+		//Muestra los asientos iniciales
+		 System.out.println("Estado actual de los asientos:"); 
 	        for (int i = 0; i < asientos.length; i++) {
 	            for (int j = 0; j < asientos[i].length; j++) {
 	                System.out.print(asientos[i][j] + " ");
@@ -45,14 +46,15 @@ public class Ej1AsientosCine {
 	            System.out.print("Introduce el número de columna: ");
 	            int columna = scanner.nextInt();
 	            
-	            if (asientos[fila - 1][columna - 1] == 'L') {
-	                asientos[fila - 1][columna - 1] = 'O';
+	            if (asientos[fila - 1][columna - 1] == 'L') { //Comprueba si el asiento está libre
+	                asientos[fila - 1][columna - 1] = 'O'; //Si está libre lo marca con una O para ocuparlo
 	                System.out.println("Acabas de reservar este asiento");
 	            } else {
-	                System.out.println("Error, asiento ya ocupado");
+	                System.out.println("Error, asiento ya ocupado"); //Si ya está ocupado salta error
 	            }
 	     
-	            System.out.println("Estado actual de los asientos:"); //Muestra los asientos actualizados ocupados
+	          //Muestra los asientos actualizados ocupados
+	            System.out.println("Estado actual de los asientos:"); 
 	            for (int i = 0; i < asientos.length; i++) {
 	                for (int j = 0; j < asientos[i].length; j++) {
 	                    System.out.print(asientos[i][j] + " ");
@@ -62,11 +64,12 @@ public class Ej1AsientosCine {
 	            
 	            System.out.print("Quieres salir? (Si/No): ");
 	            String respuesta = scanner.next();
-	            if (respuesta.length() > 0 && respuesta.charAt(0) == 'S' || respuesta.charAt(0) == 's') { //Si la respuesta empieza por S o s termina de preguntar
+	            if (respuesta.charAt(0)=='S'||respuesta.charAt(0)=='s') { //Si la respuesta empieza por S o s para de preguntar y termina el programa
 	                break;
-	            }
+	                
+	            }    
 	        }
-
-}
-
+		 scanner.close();
+	}
+	
 }
